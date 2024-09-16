@@ -1,20 +1,20 @@
-// Select the canvas element and set up the context
+//  canvas element and set up the context
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
 // Loading and setting up background images
 const images = [
-    'image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg', 'image5.jpg', 
+    'i3.jpg', 'i7.jpg', 'i13.jpg', 'i15.jpg',  
+    'image1.jpg', 'image2.jpg', 'image6.jpg', 'image9.jpg', 'image10.jpg',
+    'image11.jpg', 'image33.jpg', 'image19.jpg', 'image20.jpg', 'image21.jpg', 
     'image23.jpg', 'image24.jpg', 'image25.jpg', 'image26.jpg', 'image27.jpg',
-    'image29.jpg', 'image29.webp', 'image30.jpg', 'image32.jpg', 'image33.jpg', 
-    'image34.jpg', 'image35.jpg', 'image36.jpg', 'image37.jpg', 'image38.jpg',
-    'image6.jpg', 'image7.jpg', 'image8.jpg', 'image9.jpg', 'image10.jpg',
-    'image17.jpg', 'image19.jpg', 'image20.jpg', 'image21.jpg', 'image22.jpg',
-    'i9.jpg', 'i10.jpg', 'i11.jpg', 'i12.jpg', 'i13.jpg', 'i14.jpg', 
-    'i15.jpg', 'i16.jpg', 'i17.jpg', 'i18.jpg',
-    'image17.jpg', 'image19.jpg', 'image20.jpg', 'image21.jpg', 'image22.jpg',
-    'i9.jpg', 'i10.jpg', 'i11.jpg', 'i12.jpg', 'i13.jpg', 'i14.jpg', 
-    'i15.jpg', 'i16.jpg', 'i17.jpg', 'i18.jpg'
+    'image20.jpg', 'image29.jpg', 'image32.jpg', 'image33.jpg', 'image34.jpg',
+    'image38.jpg', 'image19.jpg', 'image20.jpg', 'image21.jpg', 'image19.jpg',
+    'i13.jpg', 'i7.jpg', 'image27.jpg', 'i15.jpg', 'i18.jpg', 
+    'image1.jpg', 'image2.jpg', 'image6.jpg', 'image20.jpg', 'image10.jpg',
+    'image11.jpg', 'image15.jpg', 'image19.jpg', 'image20.jpg', 'image21.jpg', 
+    'image24.jpg','image20.jpg', 'image29.jpg', 'image32.jpg', 'image33.jpg', 'image34.jpg',
+    
 ];
 
 // Creating and positioning images
@@ -47,7 +47,7 @@ function animateImages() {
         img.style.left = `${rect.left + speed.x}px`;
         img.style.top = `${rect.top + speed.y}px`;
 
-        // Boundary checks to keep images within the viewport
+        //  checks to keep images within the viewport
         if (rect.left + speed.x < 0 || rect.right + speed.x > window.innerWidth) {
             speed.x *= -1;
         }
@@ -87,7 +87,7 @@ let direction = { x: 0, y: 0 };
 let food = { x: Math.floor(Math.random() * canvas.width / gridSize) * gridSize, y: Math.floor(Math.random() * canvas.height / gridSize) * gridSize };
 let score = 0;
 
-// Draw the snake and food on the canvas
+// Draw the snake and food 
 function draw() {
     // Clear the canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -100,8 +100,8 @@ function draw() {
     snake.forEach((segment, index) => {
         ctx.fillRect(segment.x, segment.y, gridSize, gridSize);
         if (index === 0) {
-            // Draw the head with a border
-            ctx.strokeStyle = "green"; // Border color
+            //  the head with a border
+            ctx.strokeStyle = "black"; // Border color
             ctx.lineWidth = 2;
             ctx.strokeRect(segment.x, segment.y, gridSize, gridSize);
         }
@@ -147,7 +147,7 @@ function draw() {
     ctx.fillText("Score: " + score, 10, 20);
 }
 
-// Handle keyboard input to change the snake's direction
+//  keyboard input 
 document.addEventListener("keydown", event => {
     switch (event.key) {
         case "ArrowUp":
